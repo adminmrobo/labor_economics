@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Genspark에서 받은 표지 PNG를 반영한다.
-covers_in/cover_<키>.png → (16:9 가운데 맞춤) → 원래 픽셀 격자 480×270로 NEAREST 축소 → 4배 NEAREST 확대
+covers_in/cover_<키>.png → (16:9 가운데 맞춤) → 원래 픽셀 격자 480×270로 BOX(면적 평균) 축소 → 4배 NEAREST 확대
 → covers/cover_<키>.webp (1920×1080 무손실) + assets/og/cover_<키>.jpg (1200×630 공유 미리보기).
 그다음 build.py를 다시 실행하면 장 표지·목차 썸네일이 바뀐다."""
 import os, glob
@@ -17,7 +17,7 @@ for f in sorted(glob.glob(os.path.join(IN, 'cover_*.png')) + glob.glob(os.path.j
         nw = round(h * 16 / 9); im = im.crop(((w - nw) // 2, 0, (w - nw) // 2 + nw, h))
     elif w / h < 16 / 9:
         nh = round(w * 9 / 16); im = im.crop((0, (h - nh) // 2, w, (h - nh) // 2 + nh))
-    grid = im.resize((GX, GY), Image.NEAREST)
+    grid = im.resize((GX, GY), Image.BOX)  # 격자가 고르지 않은 생성 그림은 면적 평균으로 480×270 격자를 만든다
     big = grid.resize((GX * S, GY * S), Image.NEAREST)
     big.save(os.path.join(OUT, k + '.webp'), 'WEBP', lossless=True, method=6)
     og = big.resize((1200, 675), Image.NEAREST).crop((0, 22, 1200, 652))

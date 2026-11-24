@@ -1,6 +1,6 @@
 from _common import SRC_AI, SRC_NOTE, SRC_BJ, FILES, NOTE, AIAPP, BORJAS
 P = dict(
- num='04S', ogkey='04s', tower='04', file='04s_special_ai_substitution.html', short_title='특별 부록 · AI 대체 시대',
+ num='04S', badge='특별 부록', ogkey='04s', tower='04', file='04s_special_ai_substitution.html', short_title='특별 부록 · AI 대체 시대',
  title='특별 부록 — 생산함수와 AI 대체 시대: 보완에서 실망실업까지', eyebrow='특별 부록 · 저자 작성 · 생산함수 4종, ChatGPT 초저가 시나리오와 임계임금, 의향임금과 실망실업',
  question='AI 사용료가 0에 가까워지면 사람의 일자리는 서서히 줄까, 한꺼번에 사라질까?', question_en='As the price of AI approaches zero, do jobs shrink gradually or vanish at once?',
  desc='저자가 직접 만든 노동경제학 특별 부록을 강의실 해설로 옮긴 쪽. 레온티에프·콥-더글러스·선형·준선형 생산함수와 대체탄력성, 레온티에프의 비탄력적 수요와 선형 대체의 코너해·임계임금 w* = (a ÷ b)r, AI 사용료가 0으로 갈 때 노동수요의 절벽과 무한 탄력성, 의향임금과 시장임금 격차로 생기는 실망실업과 통계의 착시를 실험으로 익히는 비전공자용 해설.',
