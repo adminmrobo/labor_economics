@@ -1,0 +1,7 @@
+__pycache__/
+src/build/thumbs/
+*_shot.png
+docs/genspark_pack.zip
+src/build/covers_in/*.png
+src/build/ill_in/*.png
+docs/genspark_ill_pack.zip

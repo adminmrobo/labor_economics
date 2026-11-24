@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+"""그림 픽셀 깨짐 보정(px-fix v1): 기본은 부드럽게, 실제 표시 배율이 2배 이상인 그림만 각진 픽셀로.
+윈도 화면 배율 125%·150%나 브라우저 확대에서 픽셀이 들쭉날쭉 깨져 보이는 현상을 막는다. 모든 HTML의 </head> 앞에 넣는다."""
+BLOCK = '<!-- px-fix v1 --><style id="px-fix">img{image-rendering:auto!important}</style><script id="px-fix-js">(function(){var R=window.ResizeObserver;function f(i){var n=i.naturalWidth,w=i.getBoundingClientRect().width;if(!n||!w)return;var s=w*(window.devicePixelRatio||1)/n;i.style.setProperty("image-rendering",s>=1.95?"pixelated":"auto","important")}var ro=R?new R(function(es){es.forEach(function(e){f(e.target)})}):null;function a(i){if(i.__px)return;i.__px=1;i.addEventListener("load",function(){f(i)});if(ro)ro.observe(i);f(i)}function all(r){(r||document).querySelectorAll&&(r||document).querySelectorAll("img").forEach(a)}function go(){all();if(window.MutationObserver)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.tagName==="IMG")a(n);else all(n)})})}).observe(document.documentElement,{childList:true,subtree:true});window.addEventListener("resize",function(){document.querySelectorAll("img").forEach(f)})}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go()})();</script><!-- /px-fix -->'
+def apply(html):
+    if 'id="px-fix"' in html: return html
+    return html.replace('</head>', BLOCK + '</head>', 1)

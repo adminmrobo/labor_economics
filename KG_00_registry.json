@@ -1,0 +1,990 @@
+{
+ "version": "1.0",
+ "date": "2026-11-25",
+ "vocabularies": {
+  "jel": "https://www.aeaweb.org/econlit/jelCodes.php",
+  "stw": "http://zbw.eu/stw/",
+  "wikidata": "http://www.wikidata.org/entity/"
+ },
+ "ids": {
+  "lab:concept/labor-market": {
+   "ko": "노동시장",
+   "en": "labor market",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J01",
+    "J21"
+   ]
+  },
+  "lab:concept/wage-equation": {
+   "ko": "임금방정식",
+   "en": "wage equation",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J31",
+    "I26"
+   ]
+  },
+  "lab:concept/labor-econ-questions": {
+   "ko": "노동경제학의 질문",
+   "en": "questions of labor economics",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/01-duel-fly": {
+   "ko": "20달러(처음보다 낮음)",
+   "en": "duel choice A 01",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/01-duel-robo": {
+   "ko": "30달러(처음으로 복귀)",
+   "en": "duel choice B 01",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/derived-demand": {
+   "ko": "파생수요",
+   "en": "derived demand",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/labor-mobility": {
+   "ko": "노동 이동",
+   "en": "labor mobility",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/regression-coefficient": {
+   "ko": "회귀계수",
+   "en": "regression coefficient",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/error-term": {
+   "ko": "오차항",
+   "en": "error term",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/ceteris-paribus": {
+   "ko": "ceteris paribus",
+   "en": "ceteris paribus",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/positive": {
+   "ko": "실증",
+   "en": "positive analysis",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/normative": {
+   "ko": "규범",
+   "en": "normative analysis",
+   "page": "01_what_is_labor_econ",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/labor-statistics": {
+   "ko": "고용 지표",
+   "en": "labor force statistics",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J21",
+    "J64"
+   ]
+  },
+  "lab:concept/leisure-consumption-choice": {
+   "ko": "여가-소비 선택",
+   "en": "leisure-consumption choice",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J22"
+   ]
+  },
+  "lab:concept/optimal-labor-supply": {
+   "ko": "최적 근로시간",
+   "en": "optimal labor supply",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J22"
+   ]
+  },
+  "lab:method/02-duel-fly": {
+   "ko": "0명(고용률 그대로)",
+   "en": "duel choice A 02",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/02-duel-robo": {
+   "ko": "20만 명(실업률 하락만큼)",
+   "en": "duel choice B 02",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/unemployment-rate": {
+   "ko": "실업률",
+   "en": "unemployment rate",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J64"
+   ]
+  },
+  "lab:term/employment-rate": {
+   "ko": "고용률",
+   "en": "employment-population ratio",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/lfpr": {
+   "ko": "경제활동참가율",
+   "en": "labor force participation rate",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/discouraged-worker": {
+   "ko": "실망실업자",
+   "en": "discouraged worker",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J64"
+   ]
+  },
+  "lab:term/indifference-curve": {
+   "ko": "무차별곡선",
+   "en": "indifference curve",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/mrs": {
+   "ko": "한계대체율",
+   "en": "marginal rate of substitution",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/budget-line": {
+   "ko": "예산선",
+   "en": "budget line",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/nonlabor-income": {
+   "ko": "비근로소득",
+   "en": "nonlabor income",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/reservation-wage": {
+   "ko": "유보임금",
+   "en": "reservation wage",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J22",
+    "J64"
+   ]
+  },
+  "lab:term/corner-solution": {
+   "ko": "코너해",
+   "en": "corner solution",
+   "page": "02_labor_supply",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/income-substitution-effects": {
+   "ko": "대체효과와 소득효과",
+   "en": "substitution and income effects",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J22"
+   ]
+  },
+  "lab:concept/labor-supply-curve": {
+   "ko": "노동공급곡선",
+   "en": "labor supply curve",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J22"
+   ]
+  },
+  "lab:concept/eitc": {
+   "ko": "근로장려세제(EITC)",
+   "en": "earned income tax credit",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J22",
+    "H24"
+   ]
+  },
+  "lab:method/03-duel-fly": {
+   "ko": "+2.7시간(두 효과 합)",
+   "en": "duel choice A 03",
+   "page": "03_labor_supply_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/03-duel-robo": {
+   "ko": "+11.7시간(대체효과만)",
+   "en": "duel choice B 03",
+   "page": "03_labor_supply_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/substitution-effect": {
+   "ko": "대체효과",
+   "en": "substitution effect",
+   "page": "03_labor_supply_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/income-effect": {
+   "ko": "소득효과",
+   "en": "income effect",
+   "page": "03_labor_supply_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/normal-good": {
+   "ko": "정상재",
+   "en": "normal good",
+   "page": "03_labor_supply_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/backward-bending": {
+   "ko": "후방굴절",
+   "en": "backward-bending",
+   "page": "03_labor_supply_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/labor-supply-elasticity": {
+   "ko": "노동공급 탄력성",
+   "en": "labor supply elasticity",
+   "page": "03_labor_supply_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/life-cycle": {
+   "ko": "생애주기 모형",
+   "en": "life-cycle model",
+   "page": "03_labor_supply_policy",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/short-run-labor-demand": {
+   "ko": "단기 노동수요",
+   "en": "short-run labor demand",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J23"
+   ]
+  },
+  "lab:concept/long-run-labor-demand": {
+   "ko": "장기 노동수요",
+   "en": "long-run labor demand",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J23"
+   ]
+  },
+  "lab:concept/production-functions-ai": {
+   "ko": "생산함수와 AI 대체",
+   "en": "production functions and AI substitution",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J23",
+    "O33"
+   ]
+  },
+  "lab:method/04-duel-fly": {
+   "ko": "사람 유지(신중하게)",
+   "en": "duel choice A 04",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/04-duel-robo": {
+   "ko": "AI로 전환",
+   "en": "duel choice B 04",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/marginal-product": {
+   "ko": "한계생산",
+   "en": "marginal product of labor",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/vmp": {
+   "ko": "VMP",
+   "en": "value of marginal product",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/diminishing-returns": {
+   "ko": "한계생산 체감",
+   "en": "diminishing returns",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/isoquant": {
+   "ko": "등량곡선",
+   "en": "isoquant",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/isocost": {
+   "ko": "등비용선",
+   "en": "isocost",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/scale-effect": {
+   "ko": "규모효과",
+   "en": "scale effect",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/hicks-marshall": {
+   "ko": "힉스-마셜 법칙",
+   "en": "Hicks-Marshall laws of derived demand",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/elasticity-of-substitution": {
+   "ko": "대체탄력성",
+   "en": "elasticity of substitution",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/threshold-wage": {
+   "ko": "임계임금",
+   "en": "threshold wage",
+   "page": "04_labor_demand",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/competitive-equilibrium": {
+   "ko": "경쟁균형과 임금 수렴",
+   "en": "competitive equilibrium and wage convergence",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J31",
+    "J61"
+   ]
+  },
+  "lab:concept/minimum-wage": {
+   "ko": "최저임금",
+   "en": "minimum wage",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J38",
+    "J42"
+   ]
+  },
+  "lab:concept/immigration-surplus": {
+   "ko": "이민의 잉여",
+   "en": "immigration surplus",
+   "page": "05m_midterm_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J61",
+    "J15"
+   ]
+  },
+  "lab:method/05-duel-fly": {
+   "ko": "최저임금 12달러",
+   "en": "duel choice A 05",
+   "page": "05_labor_market_equilibrium",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/05-duel-robo": {
+   "ko": "최저임금 없음",
+   "en": "duel choice B 05",
+   "page": "05_labor_market_equilibrium",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/wage-convergence": {
+   "ko": "임금 수렴",
+   "en": "wage convergence",
+   "page": "05_labor_market_equilibrium",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/monopsony": {
+   "ko": "수요독점",
+   "en": "monopsony",
+   "page": "05_labor_market_equilibrium",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J42"
+   ]
+  },
+  "lab:term/marginal-cost-of-labor": {
+   "ko": "한계노동비용",
+   "en": "marginal cost of labor",
+   "page": "05_labor_market_equilibrium",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/natural-experiment": {
+   "ko": "자연실험",
+   "en": "natural experiment",
+   "page": "05_labor_market_equilibrium",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/compensating-differential": {
+   "ko": "보상적 임금격차",
+   "en": "compensating wage differential",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J31",
+    "J28"
+   ]
+  },
+  "lab:concept/hedonic-wage-function": {
+   "ko": "헤도닉 임금함수",
+   "en": "hedonic wage function",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J31",
+    "J28"
+   ]
+  },
+  "lab:concept/value-of-statistical-life": {
+   "ko": "통계적 생명가치",
+   "en": "value of a statistical life",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J17",
+    "J28"
+   ]
+  },
+  "lab:method/06-duel-fly": {
+   "ko": "시급 25달러",
+   "en": "duel choice A 06",
+   "page": "06_compensating_differentials",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/06-duel-robo": {
+   "ko": "시급 20달러",
+   "en": "duel choice B 06",
+   "page": "06_compensating_differentials",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/reservation-price": {
+   "ko": "유보가격",
+   "en": "reservation price",
+   "page": "06_compensating_differentials",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/rent": {
+   "ko": "지대",
+   "en": "rent",
+   "page": "06_compensating_differentials",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/isoprofit": {
+   "ko": "등이윤곡선",
+   "en": "isoprofit curve",
+   "page": "06_compensating_differentials",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/fringe-benefits": {
+   "ko": "부가급부",
+   "en": "fringe benefits",
+   "page": "06_compensating_differentials",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/schooling-model": {
+   "ko": "학교교육 모형",
+   "en": "schooling model",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "I26",
+    "J24"
+   ]
+  },
+  "lab:concept/stopping-rule": {
+   "ko": "정지규칙",
+   "en": "stopping rule",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "I26",
+    "J24"
+   ]
+  },
+  "lab:concept/ability-bias": {
+   "ko": "능력 편의",
+   "en": "ability bias",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "I26",
+    "J31"
+   ]
+  },
+  "lab:method/07-duel-fly": {
+   "ko": "바로 취업",
+   "en": "duel choice A 07",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/07-duel-robo": {
+   "ko": "대학 진학",
+   "en": "duel choice B 07",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/human-capital": {
+   "ko": "인적자본",
+   "en": "human capital",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/present-value": {
+   "ko": "현재가치",
+   "en": "present value",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/discount-rate": {
+   "ko": "할인율",
+   "en": "discount rate",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/irr": {
+   "ko": "내부수익률",
+   "en": "internal rate of return",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/mrr": {
+   "ko": "한계수익률",
+   "en": "marginal rate of return",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/iv": {
+   "ko": "도구변수",
+   "en": "instrumental variable",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/signaling": {
+   "ko": "신호이론",
+   "en": "signaling",
+   "page": "07_education",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J24"
+   ]
+  },
+  "lab:concept/on-the-job-training": {
+   "ko": "직장 내 훈련",
+   "en": "on-the-job training",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J24"
+   ]
+  },
+  "lab:concept/inequality-measures": {
+   "ko": "불평등 측정",
+   "en": "measures of inequality",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "D63",
+    "J31"
+   ]
+  },
+  "lab:concept/skill-biased-technical-change": {
+   "ko": "숙련 편향 기술진보",
+   "en": "skill-biased technological change",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J31",
+    "O33"
+   ]
+  },
+  "lab:method/08-duel-fly": {
+   "ko": "1.45배 그대로",
+   "en": "duel choice A 08",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/08-duel-robo": {
+   "ko": "1.20배로 하락",
+   "en": "duel choice B 08",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/general-training": {
+   "ko": "일반 훈련",
+   "en": "general training",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/specific-training": {
+   "ko": "특수 훈련",
+   "en": "specific training",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/age-earnings-profile": {
+   "ko": "연령-소득 프로필",
+   "en": "age-earnings profile",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/percentile-ratio": {
+   "ko": "분위수 비율",
+   "en": "percentile ratio",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/lorenz-curve": {
+   "ko": "로렌츠 곡선",
+   "en": "Lorenz curve",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/gini": {
+   "ko": "지니계수",
+   "en": "Gini coefficient",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "D63"
+   ]
+  },
+  "lab:term/superstars": {
+   "ko": "슈퍼스타 경제학",
+   "en": "economics of superstars",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/intergenerational-elasticity": {
+   "ko": "세대 간 소득 탄력성",
+   "en": "intergenerational income elasticity",
+   "page": "08_wage_distribution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/migration-investment": {
+   "ko": "인적자본 투자로서의 이주",
+   "en": "migration as human capital investment",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J61"
+   ]
+  },
+  "lab:concept/roy-model": {
+   "ko": "로이 모형",
+   "en": "Roy model of self-selection",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J61",
+    "J15"
+   ]
+  },
+  "lab:concept/immigrant-assimilation": {
+   "ko": "이민자 동화와 코호트 효과",
+   "en": "immigrant assimilation and cohort effects",
+   "page": "09f_final_review",
+   "domain": [
+    "econ"
+   ],
+   "jel": [
+    "J61",
+    "J15"
+   ]
+  },
+  "lab:method/09-duel-fly": {
+   "ko": "코호트 추적: 24%p",
+   "en": "duel choice A 09",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/09-duel-robo": {
+   "ko": "단면 자료: 48%p",
+   "en": "duel choice B 09",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/migration-cost": {
+   "ko": "이주 비용",
+   "en": "migration cost",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/return-migration": {
+   "ko": "귀환 이주",
+   "en": "return migration",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/tied-mover": {
+   "ko": "동반 이주자",
+   "en": "tied mover",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/tied-stayer": {
+   "ko": "동반 비이주자",
+   "en": "tied stayer",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/positive-selection": {
+   "ko": "양의 선택",
+   "en": "positive selection",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/negative-selection": {
+   "ko": "음의 선택",
+   "en": "negative selection",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/cohort-effect": {
+   "ko": "코호트 효과",
+   "en": "cohort effect",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/job-match": {
+   "ko": "직업 매칭",
+   "en": "job match",
+   "page": "09_labor_mobility",
+   "domain": [
+    "econ"
+   ]
+  }
+ }
+}
