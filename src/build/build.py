@@ -403,7 +403,7 @@ def page(P):
     for l in L: P['flow'] += [[l['node'][2], 0], [l['limit_short'], 1]]
     if V2: links = [('three', '3줄 요약'), ('cast', '식구')] + [(l['id'], f'{i+1} {l["short"]}') for i, l in enumerate(L)] + [('duel', '대결'), ('sum', '정리'), ('prompt', 'AI 프롬프트'), ('dash', '복습 대시보드'), ('kg', '색인')]
     else: links = [('three', '3줄 요약'), ('cast', '강의실 식구')] + [(l['id'], f'{i+1} {l["short"]}') for i, l in enumerate(L)] + [('dash', '대시보드'), ('duel', '대결'), ('sum', '정리'), ('kg', '색인'), ('export', '꾸러미')]
-    o = [head(P, P['title'], P['desc'], P['file']), nav(links, f'{SERIES_SHORT} {num}'), tower.tower_html(num), cover(P, M, f'cover_{num}')]
+    o = [head(P, P['title'], P['desc'], P['file']), nav(links, f'{SERIES_SHORT} {num}'), tower.tower_html(P.get('tower', num)), cover(P, M, f"cover_{P.get('ogkey', num)}")]
     kp = ''.join(f'<div class="kpi {c}"><b>{v}</b><span>{t}</span></div>' for v, t, c in P['kpis'])
     hero_talk = ''.join(say(*t, M) for t in P['hero_talk'])
     o.append(f'''<header class="hero" id="hero"><div class="wrap hero-grid"><div class="hero-text"><span class="eyebrow">{e(P["eyebrow"])}</span><h1>{P["title"]}</h1><p class="q">{P["question"]}</p><p>{P["intro"]}</p><section class="kpis k4">{kp}</section></div><div class="dialog">{hero_talk}</div></div></header>''')

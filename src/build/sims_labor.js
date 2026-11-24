@@ -416,3 +416,49 @@ DUELS.layoff=function(){var need=20*2000/1600;return {fly:Math.abs(need*1600-20*
 DUELS.college=function(){var r=.06,hs=pvStream(0,18,65,r,2800,0,0),col=pvStream(0,18,65,r,4000,700,4),irr=bisect(function(x){return pvStream(0,18,65,x,4000,700,4)-pvStream(0,18,65,x,2800,0,0)},.001,.6);return {fly:hs,robo:col,say:'할인율 6%에서 생애소득 현재가치: 바로 취업 '+nf(Math.round(hs))+'만 원, 대학 진학 '+nf(Math.round(col))+'만 원. 내부수익률이 약 '+(irr*100).toFixed(1)+'%라 6%에서는 대학이 이득이에요(8%라면 반대).'}};
 DUELS.race=function(){return {fly:0,robo:.25,say:'기술 수요와 대졸 공급이 같은 속도(연 3.5%)로 늘면 프리미엄은 40년 뒤에도 1.45배 그대로예요. 주판봇 조교는 대졸자가 늘어난 것만 보고 1.20배로 떨어진다고 예측해 0.25배 빗나갔어요.'}};
 DUELS.cohortd=function(){var g=8,q=8;return {fly:0,robo:q*3,say:'1980년 입국 코호트를 30년 따라가면 실제로 '+g*3+'%p 따라잡았어요. 주판봇 조교는 2010년 단면 자료의 기울기로 '+(g+q)*3+'%p라고 예측해 '+q*3+'%p 과대추정했어요.'}};
+
+/* ===== 특별 부록: 생산함수와 AI 대체 시대 (저자 작성 부록) ===== */
+/* 네 가지 생산함수의 등량곡선(Y = 20, a = 4, b = 2)과 비용 최소점 */
+function q4opt(t,w,r){var Y=20,a=4,b=2;if(t===0)return {L:Y/a,K:Y/b};if(t===1){return w/a<r/b?{L:Y/a,K:0}:w/a>r/b?{L:0,K:Y/b}:{L:Y/(2*a),K:Y/(2*b)}}
+  if(t===2){var L=Y/Math.sqrt(a*b)*Math.sqrt(r/w);return {L:L,K:Y*Y/(a*b*L)}}var Lq=Math.min(9*r*r/(b*b*w*w),Y*Y/36);return {L:Lq,K:Math.max(0,(Y-6*Math.sqrt(Lq))/b)}}
+SIMS.isoq4=function(el,cfg){var c=S0(el,cfg,300,'네 가지 생산함수: 같은 산출(Y = 20)을 만드는 노동·자본 조합'),row=rows(el),K=kpis(el,4),E=eqline(el),I=insight(el);
+  var t=0,w=8,r=6,names=['레온티에프 min(4L, 2K)','선형 4L + 2K','콥-더글러스 √8·L^½K^½','준선형 6√L + 2K'],sig=['0 (완전보완)','∞ (완전대체)','1 (부분 대체)','L에 따라 변함'];
+  buttons(row,'생산함수',[[0,'레온티에프'],[1,'선형'],[2,'콥-더글러스'],[3,'준선형']],t,function(v){t=v;draw()});
+  S(row,'시급 w',1,20,.5,w,fx(1),function(v){w=v;draw()});S(row,'AI·자본 사용료 r',.5,12,.5,r,fx(1),function(v){r=v;draw()});
+  function iso(x){if(t===0)return x<5?NaN:10;if(t===1)return (20-4*x)/2;if(t===2)return 50/x;return (20-6*Math.sqrt(x))/2}
+  function draw(){var o=q4opt(t,w,r),TC=w*o.L+r*o.K;
+    var P=plot(c,300,{xlo:0,xhi:14,ylo:0,yhi:16,xl:'노동 L',yl:'자본(AI) K',title:'보라 등량곡선 · 파랑 최소 비용 등비용선 · 점 = 비용 최소 조합'});
+    if(t===0){P.seg(5,10,14,10,COL.m,2.6);P.seg(5,10,5,16,COL.m,2.6)}else P.fn(iso,COL.m,2.6,null,t===2?50/16:0,t===1?5:t===3?11.1:14);
+    P.fn(function(x){return (TC-w*x)/r},COL.s,1.8,[5,4],0,14);P.dot(o.L,o.K,COL.g,6,'최소');stamp(P.ctx,P.W,'Y = 20');
+    K([[f1(o.L,2),'노동수요 L*',o.L>0?'g':'r'],[f1(o.K,2),'자본(AI) 수요 K*','i'],[nf(Math.round(TC)),'최소 총비용','a'],[sig[t],'대체탄력성 σ','m']]);
+    E(t===0?'4L = 2K = 20 → L* = 5, K* = 10 (가격과 무관)':t===1?'단위비용 노동 '+f1(w/4,2)+' vs AI '+f1(r/2,2)+' → 싼 쪽만(코너해) · 임계임금 w* = 2r = '+f1(2*r,1):t===2?'K ÷ L = w ÷ r → L* = 20 ÷ √8 × √(r ÷ w) = <i>'+f1(o.L,2)+'</i>':'MRTS = f′(L) ÷ b = 3 ÷ (2√L) = w ÷ r → L* = 9r² ÷ (4w²) = <i>'+f1(o.L,2)+'</i>');
+    I([['i',['보완: 사람 한 명에 기계 한 대처럼 비율이 고정이에요. 등량곡선이 L자라 가격이 바뀌어도 꼭짓점에 머물러요.','완전대체: 등량곡선이 직선이라 등비용선과 기울기를 비교해 끝점(코너)만 골라요.','부분 대체: 볼록한 등량곡선에 등비용선이 접하는 곳. 가격이 바뀌면 조합이 조금씩 움직여요.','준선형: MRTS가 L에만 달려 있어 등량곡선이 위아래로 평행이동한 모양이에요. 보완과 대체가 섞인 일(자동화 + 사람)을 그릴 때 써요.'][t]],['a','부록의 핵심 질문: AI는 생산함수를 레온티에프·콥-더글러스(보완·부분 대체)에서 선형(완전대체)으로 옮겨 놓는가?']])}
+  addMod(c,function(dt){if(!dt)draw()});draw()};
+
+/* AI 가격 하락과 노동수요: 레온티에프 vs 선형 vs 콥-더글러스 */
+SIMS.rcliff=function(el,cfg){var c=S0(el,cfg,280,'AI 사용료가 내려갈 때 노동수요: 수직·절벽·완만'),row=rows(el),K=kpis(el,4),E=eqline(el),I=insight(el);
+  var w=8,r=6;
+  S(row,'시급 w',1,20,.5,w,fx(1),function(v){w=v;draw()});S(row,'AI 사용료 r(ChatGPT 초저가로 내려 보기)',.1,12,.1,r,fx(1),function(v){r=v;draw()});
+  function draw(){var lin=function(rr){return w<2*rr?5:w>2*rr?0:2.5},cd=function(rr){return q4opt(2,w,rr).L};
+    var P=plot(c,280,{xlo:0,xhi:12,ylo:0,yhi:10,xl:'AI 사용료 r',yl:'노동수요 L*',title:'보라 레온티에프 · 빨강 선형(완전대체) · 파랑 콥-더글러스 · 주황 점선 = 지금 r'});
+    P.seg(0,5,12,5,COL.m,2.2);var x0=w/2;P.seg(0,0,x0,0,COL.r,2.6);P.seg(x0,0,x0,5,COL.r,1.2,[3,3]);P.seg(x0,5,12,5,COL.r,2.6);P.fn(cd,COL.s,2.2,null,.1,12);
+    P.seg(r,0,r,10,COL.a,1.4,[4,3]);P.dot(r,lin(r),COL.r,6,'선형');P.dot(r,cd(r),COL.s,5,'CD',8,14);stamp(P.ctx,P.W,'Y = 20, a = 4, b = 2');
+    K([['$'+f1(2*r,1),'임계임금 w* = (a ÷ b)r','a'],[f1(lin(r),2),'선형 노동수요',lin(r)>0?'g':'r'],[f1(cd(r),2),'콥-더글러스 노동수요','i'],['5.00','레온티에프 노동수요(고정)','m']]);
+    E('w* = (4 ÷ 2) × '+f1(r,1)+' = '+f1(2*r,1)+(w>2*r?' < 시급 '+f1(w,1)+' → 선형 기술에서 노동수요 0':' ≥ 시급 '+f1(w,1)+' → 노동 유지(L* = Y ÷ a = 5)'));
+    I([[w>2*r?'r':'g',w>2*r?'AI 사용료가 시급의 절반 아래로 내려가는 순간 선형 기술의 노동수요가 5에서 0으로 뚝 떨어져요. 부록의 "ChatGPT 초저가 시나리오"예요.':'아직은 사람의 단위비용이 더 싸요. r을 '+f1(w/2,1)+' 아래로 내려 보세요.'],['i','r → 0이면 w* → 0이라 어떤 양의 임금도 AI보다 비싸져요. 임계 부근에서 노동수요의 임금탄력성은 무한대로 발산해요. 레온티에프는 AI 가격과 상관없이 그대로, 콥-더글러스는 서서히 줄어요.']])}
+  addMod(c,function(dt){if(!dt)draw()});draw()};
+
+/* 시장임금 하락과 실망실업: 의향임금이 2~14달러에 고르게 퍼진 100명 */
+SIMS.discwork=function(el,cfg){var c=S0(el,cfg,280,'시장임금이 의향임금 아래로: 실망실업과 통계의 착시'),row=rows(el),K=kpis(el,4),E=eqline(el),I=insight(el);
+  var r=6;
+  S(row,'AI 사용료 r(시장임금 상한 w* = 2r)',.5,8,.25,r,fx(2),function(v){r=v;draw()});
+  function draw(){var wm=Math.min(12,2*r),part=Math.max(0,Math.min(100,(wm-2)/12*100)),emp=.9*part,u=part?10:0,disc=100-part;
+    var P=plot(c,280,{xlo:0,xhi:110,ylo:0,yhi:14,xl:'노동공급(일하려는 사람 수)',yl:'임금',title:'빨강 노동공급곡선(의향임금 순서) · 주황 시장임금 · 회색 = 이탈한 사람'});
+    P.fn(function(n){return n>100?NaN:2+.12*n},COL.r,2.6,null,0,100);P.seg(0,wm,110,wm,COL.a,1.8,[5,4]);if(part<100)P.poly([[part,wm],[100,14],[100,wm]],COL.muted,.25);P.dot(part,wm,COL.g,6,'참여 '+f1(part,0)+'명');stamp(P.ctx,P.W,'설명용 모형');
+    K([['$'+f1(wm,2),'시장임금 w_m',wm<12?'r':'g'],[f1(disc,0)+'명','시장임금 < 의향임금으로 이탈',disc>16.8?'r':'i'],[f1(u,0)+'%','공식 실업률(구직자 중)','i'],[f1(emp,0)+'%','고용률(100명 중 취업)',emp<75?'r':'g']]);
+    E('참여 = 의향임금 ≤ w_m 인 사람 = ('+f1(wm,1)+' − 2) ÷ 12 × 100 = <i>'+f1(part,0)+'명</i> · 취업 = 참여 × 90%');
+    I([[wm<12?'r':'i',wm<12?'AI 사용료가 내려 시장임금이 $'+f1(wm,1)+'까지 밀렸어요. 의향임금이 더 높은 '+f1(disc,0)+'명이 구직을 포기해 비경제활동인구가 됐어요(노동공급 왼쪽 이동).':'시장임금이 12달러면 의향임금이 그보다 낮은 사람은 모두 일하려 해요.'],['a','그런데 공식 실업률은 10% 그대로예요. 구직을 포기한 사람은 실업자로 세지 않기 때문이에요(CH02 실망실업자). 고용률을 함께 봐야 AI 충격의 크기가 보여요.']])}
+  addMod(c,function(dt){if(!dt)draw()});draw()};
+
+DUELS.chatgpt=function(){var cd=q4opt(2,8,.5).L;return {fly:cd,robo:0,say:'AI 사용료가 6 → 0.5로 폭락했어요. 일은 사람과 AI가 완전히 바꿔 쓸 수 있는(선형) 일이에요. 실제 노동수요는 0(임계임금 1 < 시급 8). 초파리 조교는 콥-더글러스처럼 서서히 준다고 보고 '+cd.toFixed(2)+'를 예측했고, 주판봇 조교는 0을 예측했어요.'}};
+

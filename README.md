@@ -4,7 +4,7 @@
 
 **본 강의는 한국기술교육대학교 고용정책과의 노동경제학 2026년 1학기 강의를 기반으로 제작됐습니다.**
 
-주차별 강의노트(1~11주차)와 기말고사 대비 자료집, 추가 자료(생산함수 4종과 AI 대체·실망실업, 민서 임금방정식 실습, 보상적 임금격차 요약 슬라이드)를 뼈대로 하고, 주 교재 George J. Borjas, 『Labor Economics』(8판)의 개념·그림 번호를 따른 **비전공 독자용 강의실 해설 시리즈**입니다. 형식은 [미시경제학 연구실](https://adminmrobo.github.io/micro_economics/)·[경제학 원론 연구실](https://adminmrobo.github.io/basic_economic_lab/)과 같습니다.
+주차별 강의노트(1~11주차)와 기말고사 대비 자료집, 추가 자료(민서 임금방정식 실습, 보상적 임금격차 요약 슬라이드)를 뼈대로 하고, 저자가 직접 만든 특별 부록 「생산함수와 AI 대체 시대」를 별도 쪽으로 더했으며, 주 교재 George J. Borjas, 『Labor Economics』(8판)의 개념·그림 번호를 따른 **비전공 독자용 강의실 해설 시리즈**입니다. 형식은 [미시경제학 연구실](https://adminmrobo.github.io/micro_economics/)·[경제학 원론 연구실](https://adminmrobo.github.io/basic_economic_lab/)과 같습니다.
 
 - **바로 보기:** https://adminmrobo.github.io/labor_economics/
 - 글 · 안상선 ((주)M-Robo 대표) · [저자 소개](https://adminmrobo.github.io/who_am_i/who_am_i.html)
@@ -18,7 +18,7 @@
 | 수강생 | 하루 · 시아 · 모아 | 하루는 수식을 대신 질문, 시아·모아는 대결 심판 |
 | 뒷자리 수강생 | X1 · X2 · X3 | 아직 공개되지 않은 식구. 질문과 실험 거들기 |
 
-## 구성 (3D 안내: 노동시장 일자리 장터, 부스 13곳)
+## 구성 (3D 안내: 노동시장 일자리 장터, 부스 13곳 · 특별 부록은 4호 부스 별관)
 
 | 부스 | 쪽 | 단계 ①②③ | 조교 대결 (결과) |
 |---|---|---|---|
@@ -26,6 +26,7 @@
 | 2호 | [CH02 노동공급 (1) 일할까, 쉴까](02_labor_supply.html) | 고용 지표와 실망실업자 · 무차별곡선과 예산선 · 최적 선택과 유보임금 | 구직 포기 뒤 취업자 수 (초파리) |
 | 3호 | [CH03 노동공급 (2) 임금 변화와 정책](03_labor_supply_policy.html) | 대체·소득효과 · 노동공급곡선과 탄력성 · EITC와 생애주기 | 시급 20→30의 근로시간 (초파리) |
 | 4호 | [CH04 노동수요](04_labor_demand.html) | VMP = w · 비용 최소화와 대체·규모효과 · 생산함수 4종과 AI 대체 | AI 사용료 인하 뒤 비용 (주판봇) |
+| 4호 별관 | [특별 부록 — 생산함수와 AI 대체 시대](04s_special_ai_substitution.html) (저자 작성) | 생산함수 4종과 대체탄력성 · ChatGPT 초저가 시나리오와 임계임금 · 의향임금과 실망실업 | AI 사용료 폭락 뒤 노동수요 (주판봇) |
 | 5호 | [CH05 노동시장균형](05_labor_market_equilibrium.html) | 경쟁균형과 임금 수렴 · 최저임금(경쟁 vs 수요독점) · 이민의 잉여 | 수요독점 + 최저임금의 고용 (초파리) |
 | 쉼터A | [중간 요약정리 및 퀴즈](05m_midterm_review.html) | 장별 요약 · 확인 문제 25 · 업무 계산 5 | — |
 | 6호 | [CH06 보상적 임금격차](06_compensating_differentials.html) | 위험한 일의 시장 · 헤도닉 임금함수 · VSL·안전규제·해고 | 해고 직장의 공정 시급 (초파리) |
@@ -42,13 +43,14 @@
 - 겹치는 자료는 한 번만 반영했습니다(예: 추가 자료 01은 기말고사 대비 자료집 앞부분과 같아 새 슬라이드 1장만 반영). 목록은 [docs/AUDIT_REPORT.md](docs/AUDIT_REPORT.md)에 있습니다.
 - 원자료에서 뜻이 불분명하거나 앞뒤가 맞지 않는 곳은 바로잡고 각 쪽 바닥글 "원자료와 다르게 쓴 곳"에 적었습니다(예: 이주 비용 계산의 임금 상승률 0.58과 0.5 혼용, EITC 표기, 과장 표현).
 - 모든 예시값은 다시 계산했고, 새로 만든 설명용 모형은 각 쪽 바닥글에 밝혔습니다. EITC 기준은 교과서 예(2017년, 자녀 2명)를 따랐습니다.
-- 표지는 아직 캐릭터 대체 표지입니다. 16비트 RPG 픽셀아트 지시문은 [docs/IMG_PROMPTS_all.md](docs/IMG_PROMPTS_all.md), 대화별 요청문은 [docs/genspark/](docs/genspark/)에 있습니다.
+- 표지는 아직 캐릭터 대체 표지입니다(특별 부록 포함 14장). 16비트 RPG 픽셀아트 지시문은 [docs/IMG_PROMPTS_all.md](docs/IMG_PROMPTS_all.md), 대화별 요청문은 [docs/genspark/](docs/genspark/)에 있습니다.
 
 ## 파일
 
 ```
 index.html · tower.html            목차 · 3D 장터 보기
 01_…html ~ 09_…html                장 해설 (한 파일)
+04s_special_ai_substitution.html   특별 부록(저자 작성) — 생산함수와 AI 대체 시대
 05m_… · 09f_…html                  중간·기말 요약정리 및 퀴즈
 practice/index.html                마지막 장 · 실전 연습장
 KG_00_registry.json                시리즈 지식 그래프 등록부(JEL 코드)
@@ -57,7 +59,7 @@ docs/AUDIT_REPORT.md               감사보고서(자료 중복 정리·검산 
 docs/IMG_PROMPTS_all.md            표지 그림 지시문 (Genspark용)
 docs/genspark/                     Genspark 요청문(대화별)·저장 이름 체크리스트
 src/pages/*.py                     페이지 데이터
-src/build/                         빌드 도구 (sims_labor.js 실험 27개, dash_labor.js 대시보드 10개, practice.py 실전 연습장, tower.* 3D 장터)
+src/build/                         빌드 도구 (sims_labor.js 실험 30개, dash_labor.js 대시보드 11개, practice.py 실전 연습장, tower.* 3D 장터)
 ```
 
 다시 빌드하기: `python3 src/build/build.py . && python3 src/build/practice.py . && python3 src/build/make_docs.py`

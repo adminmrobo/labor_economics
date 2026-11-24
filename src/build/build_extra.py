@@ -117,8 +117,8 @@ def index(P, B):
     o = [B.head(P, P['title'], P['desc'], P['file']), home.nav_html(B.SERIES_SHORT), B.cover(P, M, 'cover_index')]
     kp = ''.join(f'<div class="kpi {c}"><b>{v}</b><span>{t}</span></div>' for v, t, c in P['kpis'])
     o.append(thumbs_css(B)); o.append(home.css())
-    tk = [(n, L[n]['file'], f'{chl(n)} · ' + strip(L[n]['short_title'])) for n in home.MID] + [('05m', '05m_midterm_review.html', '중간 요약·퀴즈')] + [(n, L[n]['file'], f'{chl(n)} · ' + strip(L[n]['short_title'])) for n in home.FIN] + [('09f', '09f_final_review.html', '기말 요약·퀴즈')]
-    lab = lambda k: '중간' if k == '05m' else '기말' if k == '09f' else str(int(k))
+    tk = [(n, L[n]['file'], f'{chl(n)} · ' + strip(L[n]['short_title'])) for n in home.MID[:4]] + [('04s', '04s_special_ai_substitution.html', '특별 부록 · AI 대체 시대')] + [(n, L[n]['file'], f'{chl(n)} · ' + strip(L[n]['short_title'])) for n in home.MID[4:]] + [('05m', '05m_midterm_review.html', '중간 요약·퀴즈')] + [(n, L[n]['file'], f'{chl(n)} · ' + strip(L[n]['short_title'])) for n in home.FIN] + [('09f', '09f_final_review.html', '기말 요약·퀴즈')]
+    lab = lambda k: '중간' if k == '05m' else '기말' if k == '09f' else '부록' if k == '04s' else str(int(k))
     mosaic = ''.join(f'<a class="mt th-{k}" href="{f}" title="{e(t)}"><span>{lab(k)}</span><i class="sr">{e(t)}</i></a>' for k, f, t in tk) + home.practice_tile() + home.mosaic_tile()
     o.append(f'<header class="hero ihero" id="hero"><div class="wrap ihero-grid"><div class="hero-text"><span class="eyebrow">{e(P["eyebrow"])}</span><h1>{P["title"]}</h1><p class="q">{P["question"]}</p><p class="lead2">{home.LEAD}</p>{home.byline()}<section class="kpis k4">{kp}</section></div><nav class="mosaic" aria-label="표지로 고르는 전체 11쪽과 실전 연습장·장터 보기">{mosaic}</nav></div><div class="wrap"><div class="dialog">{"".join(B.say(*t, M) for t in P["hero_talk"])}</div></div></header>')
     o.append(home.micro_section(lambda w, m, t: B.say(w, m, t, M)))

@@ -189,9 +189,9 @@
    ]
   },
   "lab:concept/discouraged-worker": {
-   "ko": "실망실업자",
-   "en": "discouraged worker",
-   "page": "02_labor_supply",
+   "ko": "실망실업",
+   "en": "discouraged workers",
+   "page": "04s_special_ai_substitution",
    "domain": [
     "econ"
    ],
@@ -232,9 +232,9 @@
    ]
   },
   "lab:concept/reservation-wage": {
-   "ko": "유보임금",
+   "ko": "의향임금",
    "en": "reservation wage",
-   "page": "02_labor_supply",
+   "page": "04s_special_ai_substitution",
    "domain": [
     "econ"
    ],
@@ -246,7 +246,7 @@
   "lab:term/corner-solution": {
    "ko": "코너해",
    "en": "corner solution",
-   "page": "02_labor_supply",
+   "page": "04s_special_ai_substitution",
    "domain": [
     "econ"
    ]
@@ -458,7 +458,7 @@
   "lab:term/elasticity-of-substitution": {
    "ko": "대체탄력성",
    "en": "elasticity of substitution",
-   "page": "04_labor_demand",
+   "page": "04s_special_ai_substitution",
    "domain": [
     "econ"
    ]
@@ -466,7 +466,55 @@
   "lab:term/threshold-wage": {
    "ko": "임계임금",
    "en": "threshold wage",
-   "page": "04_labor_demand",
+   "page": "04s_special_ai_substitution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:concept/threshold-wage": {
+   "ko": "임계임금과 절벽형 노동수요",
+   "en": "threshold wage and cliff-shaped labor demand",
+   "page": "04s_special_ai_substitution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/04S-duel-fly": {
+   "ko": "약 1.77(서서히 감소)",
+   "en": "duel choice A 04S",
+   "page": "04s_special_ai_substitution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:method/04S-duel-robo": {
+   "ko": "0(완전 대체)",
+   "en": "duel choice B 04S",
+   "page": "04s_special_ai_substitution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/leontief": {
+   "ko": "레온티에프 생산함수",
+   "en": "Leontief production function",
+   "page": "04s_special_ai_substitution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/linear-production": {
+   "ko": "선형 생산함수",
+   "en": "linear production function",
+   "page": "04s_special_ai_substitution",
+   "domain": [
+    "econ"
+   ]
+  },
+  "lab:term/quasi-linear": {
+   "ko": "준선형 생산함수",
+   "en": "quasi-linear production function",
+   "page": "04s_special_ai_substitution",
    "domain": [
     "econ"
    ]

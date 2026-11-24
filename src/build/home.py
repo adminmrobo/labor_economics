@@ -17,7 +17,7 @@ LEAD = ('<b>노동경제학</b>은 "나는 왜 이 월급을 받을까?"를 숫�
         '이 강의는 1부(CH01~CH05)에서 노동공급·노동수요·노동시장균형과 최저임금·이민을, 2부(CH06~CH09)에서 보상적 임금격차·교육·임금 불평등·노동 이동을 다룹니다. '
         'CH05와 CH09 뒤에는 요약정리와 퀴즈가, 마지막에는 가계·공장·노동부 정책실·진로 상담소를 운영해 보는 실전 연습장이 있어요.')
 BASIS = ('<b>본 강의는 한국기술교육대학교 고용정책과의 노동경제학 2026년 1학기 강의를 기반으로 제작됐습니다.</b> '
-         '주차별 강의노트(1~11주차)와 기말고사 대비 자료집, 추가 자료(생산함수 4종과 AI 대체·실망실업, 민서 임금방정식 실습)를 뼈대로 하고, '
+         '주차별 강의노트(1~11주차)와 기말고사 대비 자료집, 추가 자료(민서 임금방정식 실습)를 뼈대로 하고, 저자가 직접 만든 특별 부록 「생산함수와 AI 대체 시대」를 CH04 다음 쪽으로 실었으며, '
          '주 교재 George J. Borjas, 『Labor Economics』(8판)의 개념·그림 번호를 따랐습니다.')
 
 def byline():
@@ -170,13 +170,14 @@ def toc_section(L):
     def rv(k, f, t, items, label='요약 · 퀴즈'):
         lis = ''.join(f'<li>{x}</li>' for x in items)
         return f'<a class="review" href="{f}"><span class="ct th-{k}" aria-hidden="true"></span><b>{label}</b><strong>{t}</strong><ol>{lis}</ol></a>'
-    p1 = ''.join(card(n) for n in MID) + rv('05m', '05m_midterm_review.html', '중간 요약정리 및 퀴즈 (CH01~CH05)', ['장별 요약정리', '원자료 확인 문제 25문항', '업무 계산 문제 5개', '장별 점수'])
+    sp = rv('04s', '04s_special_ai_substitution.html', '특별 부록 — 생산함수와 AI 대체 시대 (저자 작성)', ['생산함수 4종과 대체탄력성', 'ChatGPT 초저가 시나리오와 임계임금', '의향임금과 실망실업', '연습문제 Q1~Q9'], '특별 부록')
+    p1 = ''.join(card(n) for n in MID[:4]) + sp + card(MID[4]) + rv('05m', '05m_midterm_review.html', '중간 요약정리 및 퀴즈 (CH01~CH05)', ['장별 요약정리', '원자료 확인 문제 25문항', '업무 계산 문제 5개', '장별 점수'])
     p2 = ''.join(card(n) for n in FIN) + rv('09f', '09f_final_review.html', '기말 요약정리 및 퀴즈 (CH06~CH09)', ['장별 요약정리', '원자료 확인 문제 20문항', '업무 계산 문제 4개', '장별 점수'])
     p3 = rv('prac', 'practice/index.html', '마지막 장 · 실전 연습장', ['가계 상담소 — 최적 근로시간·유보임금', '공장 인사팀 — VMP = w와 AI 대체', '노동부 정책실 — 최저임금과 수요독점', '진로 상담소 — 교육의 정지규칙'], '시뮬레이터')
     steps = ('<div class="steps"><div><b>이런 분께</b><p>최저임금·실업률·외국인 노동자·AI 일자리 뉴스를 듣지만, 그것이 내 월급과 어떻게 이어지는지 숫자로 보고 싶은 분. 수식을 몰라도 됩니다.</p></div>'
              '<div><b>읽는 순서</b><p>CH01 → CH09 순서가 기본이에요. 앞 장의 한계가 다음 장의 이유가 되도록 이어 두었어요. 시험 대비라면 중간·기말 정리 쪽부터 봐도 됩니다.</p></div>'
              '<div><b>장터로 둘러보기</b><p>장마다 가상의 「노동시장 일자리 장터」의 부스 하나(강의실)가 됩니다. 아래 <a href="#building">장터 보기</a>에서 3D 장터와 부스 안내판으로 장을 골라도 돼요.</p></div></div>')
-    return (f'<section class="level" id="map"><div class="wrap stack"><div class="lvhead"><h2>목차</h2><p class="lead">아홉 장과 요약·퀴즈 두 쪽, 그리고 마지막 장 실전 연습장입니다. 카드마다 그 장에서 다루는 세 가지 주제와 조교 대결 질문을 적어 두었어요.</p></div>'
+    return (f'<section class="level" id="map"><div class="wrap stack"><div class="lvhead"><h2>목차</h2><p class="lead">아홉 장과 저자의 특별 부록 한 쪽, 요약·퀴즈 두 쪽, 그리고 마지막 장 실전 연습장입니다. 카드마다 그 장에서 다루는 세 가지 주제와 조교 대결 질문을 적어 두었어요.</p></div>'
             f'<h3>1부 · 노동시장의 기본 모형 — 공급·수요·균형 (CH01~CH05, 중간고사 범위)</h3><div class="chapx">{p1}</div>'
             f'<h3>2부 · 임금은 왜 사람마다 다를까 — 보상격차·교육·불평등·이동 (CH06~CH09, 기말고사 범위)</h3><div class="chapx">{p2}</div>'
             f'<h3>마지막 장</h3><div class="chapx">{p3}</div>{steps}</div></section>')
@@ -193,7 +194,7 @@ def mosaic_tile():
 def practice_tile():
     return '<a class="mt th-prac" href="practice/index.html" title="마지막 장 · 실전 연습장"><span>실전</span><i class="sr">마지막 장 · 실전 연습장</i></a>'
 
-THUMB_KEYS = CHS + ['05m', '09f', 'idx', 'prac']
+THUMB_KEYS = CHS + ['04s', '05m', '09f', 'idx', 'prac']
 
 NAV = [('micro', '노동경제학이란'), ('map', '목차'), ('building', '장터 보기'), ('keys', '한 줄 핵심'), ('dash', '종합 대시보드'), ('path', '개념 흐름'), ('how', '식구·사용법'), ('about', '자료와 원칙')]
 

@@ -1,6 +1,6 @@
 # 그림 지시문 모음 — 노동경제학 연구실 (Genspark용)
 
-표지 13장. 16비트 RPG 픽셀아트, 낮의 강의실(흰 배경). 대화별 순서와 첨부 목록은 `docs/genspark/요청문.md`에 있습니다.
+표지 14장. 16비트 RPG 픽셀아트, 낮의 강의실(흰 배경). 대화별 순서와 첨부 목록은 `docs/genspark/요청문.md`에 있습니다.
 
 ## cover_idx — 목차 — 노동경제학 연구실
 
@@ -30,6 +30,12 @@
 
 ```
 16-bit SNES-era RPG pixel art, crisp hard-edged pixels on a clear pixel grid (draw at 480x270 logical pixels, then scale 4x with no smoothing), limited bright palette, bright DAYTIME university lecture room with a PURE WHITE background wall, big windows with soft daylight, a white board at the front, light wooden desks in rows. Composition 16:9 (1920x1080). ABSOLUTELY NO text, letters, numbers, logos or signatures anywhere (keep boards, screens, signs blank or use simple icons). Characters (match the attached reference sheet EXACTLY, same faces, hair, outfits): the PROFESSOR: spiky black hair with one white streak, small ponytail, teal rectangular glasses, white lab coat over black vest and tie; HARU (student): long pink hair with navy-blue streaks and two buns, blue eyes, lavender hoodie under a white lab coat; the FRUIT-FLY TA: black fruit-fly body, big red compound eyes, blue round helmet with pink and blue tubes, white lab coat, clear wings; the ABACUS-ROBOT TA: beige boxy CRT-monitor head with a green smiling face and a small antenna, gray arms, holds a brown wooden abacus, tank treads; X2 (back-row student): fully black cute silhouette, black beret, round teal glasses, white dot eyes. Scene: a small factory line model with five worker figurines and one shiny AI robot arm entering from the side; a staircase of descending green bars on the board; the robot TA proudly stands next to the AI robot arm while the fruit-fly TA looks surprised. Mood: cheerful, clean, educational, everyone clearly visible, no one cut off at the edges.
+```
+
+## cover_04s — 특별 부록 — 생산함수와 AI 대체 시대
+
+```
+16-bit SNES-era RPG pixel art, crisp hard-edged pixels on a clear pixel grid (draw at 480x270 logical pixels, then scale 4x with no smoothing), limited bright palette, bright DAYTIME university lecture room with a PURE WHITE background wall, big windows with soft daylight, a white board at the front, light wooden desks in rows. Composition 16:9 (1920x1080). ABSOLUTELY NO text, letters, numbers, logos or signatures anywhere (keep boards, screens, signs blank or use simple icons). Characters (match the attached reference sheet EXACTLY, same faces, hair, outfits): the PROFESSOR: spiky black hair with one white streak, small ponytail, teal rectangular glasses, white lab coat over black vest and tie; HARU (student): long pink hair with navy-blue streaks and two buns, blue eyes, lavender hoodie under a white lab coat; the FRUIT-FLY TA: black fruit-fly body, big red compound eyes, blue round helmet with pink and blue tubes, white lab coat, clear wings; the ABACUS-ROBOT TA: beige boxy CRT-monitor head with a green smiling face and a small antenna, gray arms, holds a brown wooden abacus, tank treads; X2 (back-row student): fully black cute silhouette, black beret, round teal glasses, white dot eyes; X3 (back-row student): fully black cute silhouette in a cat-ear hood with two yellow pom-pom strings. Scene: a split classroom stage: on the LEFT an old-fashioned workshop corner with a hand loom and simple tools where a worker figurine and a wooden machine work side by side (complement); on the RIGHT a sleek glowing AI robot arm and a floating chat-bubble icon (no text) at a modern desk, with a price tag (blank) dropping down like a falling feather; on the board a vertical line, a cliff-shaped step line and a gentle curve; a small group of worker figurines walking away through a side door; the robot TA confidently points at the cliff line while the fruit-fly TA scratches its head. Mood: cheerful, clean, educational, everyone clearly visible, no one cut off at the edges.
 ```
 
 ## cover_05 — CH05 노동시장균형

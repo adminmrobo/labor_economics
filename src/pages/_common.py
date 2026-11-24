@@ -10,7 +10,9 @@ def _r(id, typ, title, year, role, note, url='', venue=''):
     if venue: r['container-title'] = venue
     return r
 NOTE = _r('ahn2026labor', 'manuscript', '노동경제학 강의노트 (2026-1학기, 1~11주차)', 2026, 'primary', '한국기술교육대학교 고용정책과 노동경제학 강의노트. 주차별 강의안(오리엔테이션, 2~5주차 노동공급·노동수요, 9주차 보상적 임금격차, 10주차 임금 분포, 11주차 노동 이동)')
-FINAL = _r('ahn2026labor_final', 'manuscript', '노동경제학 기말고사 대비 자료집 (2026-1학기)', 2026, 'primary', '4장 노동시장균형부터 8장 노동 이동까지 묶은 자료집과 추가 자료(생산함수 4종과 AI 대체·실망실업, 민서 임금방정식 실습, 보상적 임금격차 요약 슬라이드)')
+FINAL = _r('ahn2026labor_final', 'manuscript', '노동경제학 기말고사 대비 자료집 (2026-1학기)', 2026, 'primary', '4장 노동시장균형부터 8장 노동 이동까지 묶은 자료집과 추가 자료(민서 임금방정식 실습, 보상적 임금격차 요약 슬라이드)')
+AIAPP = _r('ahn2026labor_ai', 'manuscript', '생산함수와 AI 대체 시대 — 생산함수와 임금·자본비용 변화, AI 대체, 그리고 실망실업의 경제학적 분석 (노동경제학 특별 부록)', 2026, 'primary', '저자가 직접 만든 특별 부록. 생산함수 4종 비교, 레온티에프 비용 최소화, 선형 대체의 코너해와 임계임금, ChatGPT 초저가 시나리오, 의향임금과 실망실업, 연습문제 Q1~Q9')
+SRC_AI = '안상선 (2026). 「생산함수와 AI 대체 시대」 노동경제학 특별 부록(저자 작성). 이 쪽의 주 자료.'
 BORJAS = {'id': 'borjas2020labor', 'type': 'book', 'title': 'Labor Economics (8th ed.)', 'author': [{'family': 'Borjas', 'given': 'George J.'}], 'issued': {'date-parts': [[2020]]},
           'container-title': 'McGraw-Hill Education', 'lab': {'work': 'lab:work/borjas2020labor', 'role': 'background', 'verified': {'title': True, 'authors': True, 'year': True, 'venue': True}, 'checkedBy': '업로드 교재 PDF 판권면 대조(ISBN 978-1-260-56552-2)', 'note': '강의의 주 교재. 본문을 옮기지 않고 개념·그림 번호·사례만 참고'}}
 def REFS(n):

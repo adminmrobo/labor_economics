@@ -112,3 +112,4 @@ P = dict(
  domain=['econ'], family='labor'
 )
 fix(P)
+P['prev'] = ('04s_special_ai_substitution.html', '특별 부록 · 생산함수와 AI 대체 시대')

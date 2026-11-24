@@ -1,4 +1,4 @@
-from _common import REFS, SRC_NOTE, SRC_FINAL, SRC_BJ, FILES, NOTE, FINAL, BORJAS, fix
+from _common import REFS, SRC_NOTE, SRC_AI, SRC_BJ, FILES, NOTE, AIAPP, BORJAS, fix
 P = dict(
  num='04', file=FILES[4], short_title='노동수요',
  title='CH04 노동수요 — 기업은 몇 명을 뽑을까, 사람일까 AI일까', eyebrow='CH04 · 단기 노동수요(VMP = w), 장기 비용 최소화와 대체·규모효과, 생산함수 4종과 AI 대체·실망실업',
@@ -72,7 +72,7 @@ P = dict(
    talk=[('doc', 'think', 'AI 사용료가 6에서 3으로 내렸어요. 시급은 8 그대로예요. 사람을 계속 쓸까요?'), ('robo', 'coin', '사람 시급이 AI 사용료보다 높긴 하지만… 원래 쓰던 대로 사람이 낫지!'), ('fly', 'point', '"선형"에서 AI 사용료를 3으로 내리고 임계임금 카드를 봐. 시급 8과 비교해.'), ('moa', 'report', '모아예요. 임계임금이 6이 돼서 노동수요가 0이 됐어요.'), ('asst', 'report', '비교할 건 시급과 사용료가 아니라 "산출 1개당 비용"(8 ÷ 4 = 2 vs 3 ÷ 2 = 1.5)이에요. 레온티에프로 바꾸면 같은 변화에도 고용이 그대로인 것도 확인했어요.')],
    sim_title='생산함수에 따라 달라지는 노동수요와 임계임금', sim=('aithresh', {}),
    explain=dict(title='풀이 — 생산함수부터 묻기', steps=['사람과 기계가 함께여야 하는 일인가(보완)? → 고용은 산출에만 달려 있어요.', '서로 완전히 바꿀 수 있는가(대체)? → 단위비용 w ÷ a와 r ÷ b를 비교해 싼 쪽만.', '임계임금 w* = (a ÷ b)r를 시장 임금과 비교해 절벽 위치를 찾아요.', '시장 임금이 유보임금보다 낮아지면 실망실업(노동공급 왼쪽 이동)까지 생각해요.'],
-    limit='기업 한 곳의 수요만 봤어요. 많은 노동자와 많은 기업이 만나 시장 임금이 어디서 정해지는지는 CH05에서 봐요.'),
+    limit='기업 한 곳의 수요만 봤어요. 생산함수 4종과 ChatGPT 초저가 시나리오, 실망실업까지의 4단계는 <a href="04s_special_ai_substitution.html">특별 부록 「생산함수와 AI 대체 시대」</a>에서 더 깊게 다뤄요. 많은 노동자와 많은 기업이 만나 시장 임금이 어디서 정해지는지는 CH05에서 봐요.'),
    code=[('cL, cK = w/a, r/b', '노동과 AI의 산출 1단위당 비용'), ('L = Y/a if cL < cK else 0', '선형(완전대체) 기술의 코너해')], code_src='example',
    bridge=dict(gen='"생성형 AI가 대체할 직무" 기사는 그 직무가 AI와 보완 관계인지 대체 관계인지부터 따져 읽어야 해요.', gen_lim='실제 직무는 여러 업무의 묶음이라 일부는 대체, 일부는 보완이에요. 완전대체 모형은 극단을 보여 주는 설명용이에요.', field='자동화 검토 때 업무를 쪼개 각 업무의 사람 단위비용과 AI 단위비용을 비교해 보세요.'))
  ],
@@ -104,13 +104,14 @@ P = dict(
   'lv3': [dict(q='Y = 4L + 2K, r = 6일 때 임계임금 w*는?', o=['3', '12', '24'], a=1, why='w* = (4 ÷ 2) × 6 = 12예요.', hint='(a ÷ b) × r.', kind='계산'),
           dict(q='레온티에프 생산함수에서 임금이 오르면 노동수요는?', o=['크게 준다', '변하지 않는다(산출이 같다면)', '0이 된다'], a=1, why='완전보완이라 대체가 불가능해 노동수요가 산출 Y ÷ a로 고정돼요.', hint='수직 수요곡선.', kind='개념')]},
  facts=[dict(id='F01', ko='단기 노동수요곡선은 가치한계생산(VMP) 곡선과 같다', work='ahn2026labor', loc='5주차 Figure 3-5', anchor='#lv1', lv=0),
-        dict(id='F02', ko='Y = L^0.5 K^0.5, w = 10, r = 20, Y = 100일 때 L* ≈ 141.42, K* ≈ 70.71이다', work='ahn2026labor_final', loc='추가 자료 생산함수 4종 Exercises Q1', anchor='#lv2', lv=1),
-        dict(id='F03', ko='Y = 4L + 2K, w = 8, Y = 20에서 r이 6에서 3으로 내리면 임계임금이 12에서 6이 되어 노동수요가 5에서 0으로 바뀐다', work='ahn2026labor_final', loc='추가 자료 Exercises Q4~Q6', anchor='#lv3', lv=2),
-        dict(id='F04', ko='시장임금이 의향(유보)임금보다 낮아지면 노동공급을 포기하는 실망실업자가 생긴다', work='ahn2026labor_final', loc='추가 자료 Exercises Q9', anchor='#lv3', lv=2)],
- refs=[NOTE, FINAL, BORJAS],
- sources=[SRC_NOTE, SRC_FINAL, SRC_BJ],
- examples=['단기 생산함수 q = 60L − 3L²와 제품 가격·시급은 설명용 예시입니다.', '콥-더글러스·레온티에프·선형 생산함수의 숫자는 강의노트 추가 자료(생산함수 4종과 AI 대체) 연습문제 그대로입니다.'],
- changes=['원자료의 "의향임금(Reservation Wage)"과 CH02의 "유보임금"은 같은 개념이어서, 이 페이지에서는 "유보임금(의향임금)"으로 통일합니다.', '원자료 5주차 노트의 장 표시 "Chapter 02"(노동수요 슬라이드 머리글)는 교과서 3장 내용이어서, 이 페이지에서는 "교과서 3장"으로 바꿉니다.', '원자료 연습문제 3번의 "Y = 60으로 고정된 상태에서 w = 5 → 8"은 문제 2(레온티에프)의 조건을 잇는 것이어서, 이 페이지에서는 "레온티에프에서는 임금이 바뀌어도 L* = 30, K* = 20 그대로"로 풀이를 밝힙니다.'],
+        dict(id='F02', ko='Y = L^0.5 K^0.5, w = 10, r = 20, Y = 100일 때 L* ≈ 141.42, K* ≈ 70.71이다', work='ahn2026labor_ai', loc='특별 부록 Exercises Q1', anchor='#lv2', lv=1),
+        dict(id='F03', ko='Y = 4L + 2K, w = 8, Y = 20에서 r이 6에서 3으로 내리면 임계임금이 12에서 6이 되어 노동수요가 5에서 0으로 바뀐다', work='ahn2026labor_ai', loc='특별 부록 Exercises Q4~Q6', anchor='#lv3', lv=2),
+        dict(id='F04', ko='시장임금이 의향(유보)임금보다 낮아지면 노동공급을 포기하는 실망실업자가 생긴다', work='ahn2026labor_ai', loc='특별 부록 Exercises Q9', anchor='#lv3', lv=2)],
+ refs=[NOTE, AIAPP, BORJAS],
+ sources=[SRC_NOTE, SRC_AI, SRC_BJ],
+ examples=['단기 생산함수 q = 60L − 3L²와 제품 가격·시급은 설명용 예시입니다.', '콥-더글러스·레온티에프·선형 생산함수의 숫자는 저자의 특별 부록 「생산함수와 AI 대체 시대」 연습문제 그대로입니다.'],
+ changes=['특별 부록의 "의향임금(Reservation Wage)"과 CH02의 "유보임금"은 같은 개념이어서, 이 페이지에서는 "유보임금(의향임금)"으로 통일합니다.', '원자료 5주차 노트의 장 표시 "Chapter 02"(노동수요 슬라이드 머리글)는 교과서 3장 내용이어서, 이 페이지에서는 "교과서 3장"으로 바꿉니다.', '특별 부록 연습문제 3번의 "Y = 60으로 고정된 상태에서 w = 5 → 8"은 문제 2(레온티에프)의 조건을 잇는 것이어서, 이 페이지에서는 "레온티에프에서는 임금이 바뀌어도 L* = 30, K* = 20 그대로"로 풀이를 밝힙니다.'],
  domain=['econ'], family='labor'
 )
 fix(P)
+P['next'] = ('04s_special_ai_substitution.html', '특별 부록 · 생산함수와 AI 대체 시대')

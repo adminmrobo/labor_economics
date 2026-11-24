@@ -79,3 +79,11 @@ DASHES['09']={tag:'CH09',title:'떠날까 남을까 — 이주의 현재가치�
       c:[{t:'line',title:'남은 근로기간별 이주 이득의 현재가치(천 달러)',xs:Ns,ys:[{c:COL.g,d:Ns.map(function(n){return pvGain(gap,p.r/100,n)/1000})}],ymin:0,mark:{x:p.N,y:M/1000,l:'지금'},xl:'남은 근로기간(년)'},
         {t:'bar',title:'연봉(달러)',vals:[wp,p.wu],labels:['출신지','목적지'],cols:[COL.s,COL.g],fy:function(v){return nf(v)}}],
       note:[['a','젊을수록 이득을 거둘 기간이 길어 같은 임금 차이라도 더 큰 이주 비용을 감수해요. 이주가 젊은 층에 몰리는 이유예요.'],['i',p.ratio>1?'목적국이 숙련에 더 큰 보상을 주면 숙련이 높은 사람이 떠나요.':'출신국이 숙련에 더 큰 보상을 주면 숙련이 낮은 사람이 떠나요.']]}}};
+
+DASHES['04S']={tag:'특별 부록',title:'AI 대체 시대의 노동시장 — 4단계 흐름 대시보드',sub:'선형 Y = 4L + 2K(Y = 20) · 시장임금 상한 w* = 2r · 의향임금 2~14달러에 고르게 100명',play:'r',playLabel:'AI 사용료를 8→0.25로',
+  params:[['r','AI 사용료 r',.25,8,.25,6,function(v){return v.toFixed(2)}],['w','기업이 부르는 시급 w',1,14,.5,8,String]],
+  f:function(p){var ws=2*p.r,L=p.w<ws?5:p.w>ws?0:2.5,wm=Math.min(12,ws),part=Math.max(0,Math.min(100,(wm-2)/12*100)),rs=seqv(.25,8,32);
+    return {k:[['$'+(ws).toFixed(1),'임계임금 w*','a'],[L.toFixed(1),'선형 노동수요',L>0?'g':'r'],[part.toFixed(0)+'명','일하려는 사람(100명 중)',part<83?'r':'g'],['STAGE '+(p.w>ws?(part<83.3?4:3):p.r<3?2:1),'4단계 흐름','m']],
+      c:[{t:'line',title:'AI 사용료별 노동수요(선형 vs 콥-더글러스)',xs:rs,ys:[{n:'선형',c:COL.r,d:rs.map(function(r){return p.w<2*r?5:0})},{n:'콥-더글러스',c:COL.s,d:rs.map(function(r){return q4opt(2,p.w,r).L})},{n:'레온티에프',c:COL.m,dash:[4,3],d:rs.map(function(){return 5})}],ymin:0,ymax:8,mark:{x:p.r,y:L,l:'지금'},xl:'AI 사용료 r'},
+        {t:'line',title:'AI 사용료별 노동시장 참여(실망실업 뒤)',xs:rs,ys:[{c:COL.g,d:rs.map(function(r){return Math.max(0,Math.min(100,(Math.min(12,2*r)-2)/12*100))})}],ymin:0,ymax:100,mark:{x:p.r,y:part,l:'지금'},xl:'AI 사용료 r'}],
+      note:[[L>0?'g':'r',L>0?'사람의 단위비용이 아직 AI보다 싸요(STAGE 1~2).':'AI 단위비용이 더 싸 노동수요가 0이에요(STAGE 3).'],['i','r이 더 내려 시장임금이 의향임금 아래로 떨어지면 구직 포기(STAGE 4)가 늘어요. 부록의 4단계: 보완 → 대체 → AI 극단 → 실망실업.']]}}};

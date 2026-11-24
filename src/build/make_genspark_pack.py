@@ -30,6 +30,7 @@ COVERS = [
  ('02', 'CH02 노동공급 (1) 일할까, 쉴까', ['doctor', 'haru', 'fruitfly', 'jupanbot', 'sia'], 'a big wall clock split into a work half (tiny briefcase icon) and a rest half (tiny hammock icon); on the board a straight downward line touched by one curved line at a glowing green dot; a sofa on one side and a work desk on the other', '시아가 접점을 가리킴'),
  ('03', 'CH03 노동공급 (2) 임금 변화와 정책', ['doctor', 'haru', 'fruitfly', 'jupanbot', 'moa'], 'a golden lottery ticket (blank) with confetti; on the board a curve that rises then bends backward; a small government counter with a coin envelope sliding out; two arrows pulling a rope in opposite directions (substitution vs income)', '모아가 줄다리기 심판'),
  ('04', 'CH04 노동수요', ['doctor', 'haru', 'fruitfly', 'jupanbot', 'x2'], 'a small factory line model with five worker figurines and one shiny AI robot arm entering from the side; a staircase of descending green bars on the board; the robot TA proudly stands next to the AI robot arm while the fruit-fly TA looks surprised', '주판봇이 이긴 판: 주판봇 기뻐함, 초파리 놀람'),
+ ('04s', '특별 부록 — 생산함수와 AI 대체 시대', ['doctor', 'haru', 'fruitfly', 'jupanbot', 'x2', 'x3'], 'a split classroom stage: on the LEFT an old-fashioned workshop corner with a hand loom and simple tools where a worker figurine and a wooden machine work side by side (complement); on the RIGHT a sleek glowing AI robot arm and a floating chat-bubble icon (no text) at a modern desk, with a price tag (blank) dropping down like a falling feather; on the board a vertical line, a cliff-shaped step line and a gentle curve; a small group of worker figurines walking away through a side door; the robot TA confidently points at the cliff line while the fruit-fly TA scratches its head', '주판봇이 이긴 판: 주판봇 자신만만, 초파리 머리 긁적'),
  ('05', 'CH05 노동시장균형', ['doctor', 'haru', 'fruitfly', 'jupanbot', 'sia', 'moa'], 'a map of two towns connected by a road with tiny workers walking from one town to the other; a single big factory with one chimney in a small town; an orange horizontal floor line across two crossing lines on the board; a small boat with tiny passengers at the edge of the map', '두 마을을 잇는 길이 보이게'),
  ('05m', '중간 요약정리 및 퀴즈', ['doctor', 'haru', 'moa', 'x1', 'fruitfly', 'jupanbot'], 'a bright review lounge: five closed binders in a row, blank quiz cards pinned on a cork board, a small score board with empty colored bars; Moa holds a clipboard like a referee, students cheering', '응원하는 분위기'),
  ('06', 'CH06 보상적 임금격차', ['doctor', 'haru', 'fruitfly', 'jupanbot', 'sia'], 'a balance scale on the desk with a hard hat and warning cone on one pan and a stack of coins on the other; a rising curve on the board with three colored dots on it; a safety vest hanging on a hook', '저울이 균형을 이룸'),
@@ -40,7 +41,7 @@ COVERS = [
  ('prac', '마지막 장 · 실전 연습장', ['doctor', 'haru', 'fruitfly', 'jupanbot', 'x2'], 'an outdoor PLAZA at the end of a job fair under blue sky (keep it bright and white-toned): four small booths: a household desk with a clock and sofa, a factory hiring desk with worker figurines, a government policy desk with a floor-line sign, a career desk with a graduation cap; characters running each booth', '각자 부스를 운영'),
 ]
 TITLE = {k: t for k, t, *_ in COVERS}
-CONV = [('대화 1 — 그림체 확정', ['idx']), ('대화 2', ['01', '02', '03', '04']), ('대화 3', ['05', '05m', '06']), ('대화 4', ['07', '08', '09']), ('대화 5', ['09f', 'prac'])]
+CONV = [('대화 1 — 그림체 확정', ['idx']), ('대화 2', ['01', '02', '03', '04']), ('대화 3', ['04s', '05', '05m', '06']), ('대화 4', ['07', '08', '09']), ('대화 5', ['09f', 'prac'])]
 
 def prompt(k):
     _, t, who, scene, memo = next(c for c in COVERS if c[0] == k)
@@ -48,7 +49,7 @@ def prompt(k):
 
 def write_docs(out):
     os.makedirs(out, exist_ok=True)
-    R = ['# Genspark 요청문 — 노동경제학 연구실 표지 13장', '',
+    R = ['# Genspark 요청문 — 노동경제학 연구실 표지 14장', '',
          '## 순서', '',
          '1. **대화 1**을 먼저 엽니다. `refs/` 폴더의 `cast_sheet.png`와 캐릭터 9장을 모두 올리고 목차 표지 1장을 받습니다.',
          '2. 그림체(픽셀 크기, 흰 배경, 캐릭터 얼굴)가 마음에 들 때까지 대화 1에서 다시 그립니다.',
@@ -69,7 +70,7 @@ def write_docs(out):
             C.append(f'| ☐ | {name.split(" —")[0]} | `cover_{k}.png` | {TITLE[k]} | {memo} |')
     C += ['', '받은 뒤 점검: ① 글자 없음 ② 흰 배경·낮 ③ 캐릭터 얼굴이 참고 그림과 같음 ④ 4배 확대해도 픽셀 경계가 또렷함 ⑤ 등장인물이 잘리지 않음']
     open(os.path.join(out, '체크리스트.md'), 'w', encoding='utf-8').write('\n'.join(C))
-    P = ['# 그림 지시문 모음 — 노동경제학 연구실 (Genspark용)', '', '표지 13장. 16비트 RPG 픽셀아트, 낮의 강의실(흰 배경). 대화별 순서와 첨부 목록은 `docs/genspark/요청문.md`에 있습니다.', '']
+    P = ['# 그림 지시문 모음 — 노동경제학 연구실 (Genspark용)', '', '표지 14장. 16비트 RPG 픽셀아트, 낮의 강의실(흰 배경). 대화별 순서와 첨부 목록은 `docs/genspark/요청문.md`에 있습니다.', '']
     for k, t, *_ in COVERS:
         P += [f'## cover_{k} — {t}', '', '```', prompt(k), '```', '']
     open(os.path.join(ROOT, 'docs', 'IMG_PROMPTS_all.md'), 'w', encoding='utf-8').write('\n'.join(P))
